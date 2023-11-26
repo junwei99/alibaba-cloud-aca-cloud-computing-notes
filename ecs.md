@@ -189,7 +189,7 @@
 
 8. EIP vs Standard Public IP
 
-   - ![Alt text](images/ecs/image-5.png)
+   ![Alt text](images/ecs/image-5.png)
 
    - key advantage: flexibility
 
