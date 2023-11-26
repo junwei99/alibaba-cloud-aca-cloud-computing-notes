@@ -3,19 +3,29 @@
 ## Apsara
 
 1.  ECS runs on top of Apsara distributed system
+
 2.  Virtualization based on XEN/KVM
+
 3.  Apsara distributed "Pangu" for storage
 
 ## Zones
 
 1. Fault isolation can be performed between zones
+
 2. Region contains multiple zones
+
 3. Distribution policy
+
    - resources in multiple zones = high availability /high disaster recovery
+
    - resources in same zone = lower network latency
+
 4. traffic that passes between zones in the same region is free
+
    - cross region traffic will incur public bandwidth charge
+
    - VPN gateway charge for VPN tunnel
+
    - CDN network charge if enterprise multi region private network
 
 ## Instances
@@ -23,8 +33,11 @@
 ### Types
 
 1. Burstable type T6
+
 2. General type G6
+
 3. Memory type R6
+
 4. Compute Optimized type C6
 
 ### Families
