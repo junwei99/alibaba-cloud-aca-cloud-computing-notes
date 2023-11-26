@@ -26,10 +26,10 @@
    - Memory type R6
    - Compute Optimized type C6
 2. Families
-   - ![Alt text](image.png)
+   - ![Alt text](images/image.png)
 3. Bare Metal Instances
    - Virtual machine + physicaly machine
-   - ![Alt text](image-1.png)
+   - ![Alt text](images/image-1.png)
    - Encrypted computed for high security applications
    - Revirtualization, run docker directly without virtualization between hardware and docker
    - Supercomputing
@@ -45,7 +45,7 @@
 2. Subscription
 3. Preemptible instance
 4. Reserved instances, more flexible purchasing model
-   - ![Alt text](image-3.png)
+   - ![Alt text](images/image-3.png)
 
 ### Storage
 
@@ -80,7 +80,7 @@
 6. Incremental
    - only changes is stored, it isn't coppying every single time
 7. Disk images
-   - ![Alt text](image-4.png)
+   - ![Alt text](images/image-4.png)
 
 ### VPC (Virtual Private Cloud)
 
@@ -112,7 +112,7 @@
    - Configure a NAT gateway, attach it to VPC group, NAT Gateway: maps private IPs to public IPs
    - Server Load Balancer (SLB) to distribute connections to ECS instances in VPC group
 8. EIP vs Standard Public IP
-   - ![Alt text](image-5.png)
+   - ![Alt text](images/image-5.png)
    - key advantage: flexibility
 9. ENI
    - Virtual network interface that can be attached to an ECS instance
