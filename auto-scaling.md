@@ -238,7 +238,7 @@ You may execute a scaling rule give the following conditions:
 
    - the scheduled task is **abandoned**
 
-3. If multiple tasks are scheduled at similar times to execture a Scaling Rule for a Scaling group
+3. If multiple tasks are scheduled at similar times to execute a Scaling Rule for a Scaling group
 
    - **Earliest task triggers** the scaling activity first
 
