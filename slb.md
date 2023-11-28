@@ -164,4 +164,68 @@ Health checks allow for traffic to be shifted away from failed instances
 
 Layer 7 health checks ensure application-level functionality, providing a more comprehensive assessment of service health.
 
-### Additional Settings
+## Additional Settings
+
+### Multi-Zone Disaster Tolerance
+
+utilizes primary/backup zone feature in SLB
+
+- If a primary zone becomes unavailable, SLB rapidly switches to a backup zone to restore its service capabilites within 30s
+
+- when primary zone becomes available, SLB automatically switches back to the primary zone
+
+  ![Alt text](images/slb/image-1.png)
+
+### Cross-region Disaster Tolerance
+
+- You can't achieve this with SLB alone, because it doesn't span multiple regions.
+
+- Need to include DNS failover capability
+
+- Alibaba Cloud DNS has a built in health check
+
+  ![Alt text](images/slb/image-2.png)
+
+- issues:
+
+  - how to synchronize database between 2 region?
+
+  - multi region architecture is more complex
+
+### Auto Scaling
+
+SLB integrates with Auto Scaling to manage the scaling of each listener independently
+
+1. Maintain ECS instance availability
+
+   - Detects impaired ECS instances
+   - Replace the instances Automatically
+
+2. Automatically scale your ECS
+
+   - Follow the demand curve for your app
+   - Reduce need to manually provisison ECS capacity
+   - Automatically bound new ECS instances to the SLB
+   - Run at optimal utilization
+
+### Security
+
+![Alt text](images/slb/image-3.png)
+
+- Protection against DDoS attacks up to 5Gbps (Anti-DDoS Basic)
+
+- All traffic from internet must first go through Anti-DDoS Basic and then arrive at SLB
+
+- Anti-DDoS Basic can defend against attacks such as SYN, UDP, ICMP, DNS, NTP, HTTP flood attacks
+
+- service is free for up to 5Gbps, if exceeds consider upgrading to Anti-DDoS probe
+
+Anti-DDoS Basic sets the **cleaning threshold** and **black hole threshold** according to the public network bandwidth configured for SLB
+
+- Cleaning threshold
+
+  - limit set in a load balancer that allows it to direct requests to another server when it reaches cleaning threshold
+
+- Black Hole threshold
+
+  - Stop sending requests to the server, it is a "black hole" (they go in but don't get processed)
